@@ -9,7 +9,7 @@ public class SwaggerConfig {
     @Bean
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
-                .group("lms-api")
+                .group("loan-management-system")
                 .pathsToMatch("/api/lms/**")
                 .build();
     }

@@ -1,6 +1,7 @@
 com/credable/lms/services/LoanService.class
+com/credable/lms/controllers/HomeController.class
+com/credable/lms/config/SwaggerConfig.class
 com/credable/lms/LoanManagementApplication.class
 com/credable/lms/services/TransactionService.class
 com/credable/lms/services/KycService.class
-com/credable/lms/config/SwaggerConfig.class
 com/credable/lms/controllers/LoanManagementController.class

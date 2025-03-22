@@ -5,6 +5,7 @@ import com.credable.lms.services.LoanService;
 import com.credable.lms.services.TransactionService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class LoanManagementController {
     }
 
     @PostMapping("/subscribe")
+    @Operation(summary = "Subscribe customer", description = "Subscribes a customer and fetches KYC data")
     public String subscribe(@RequestParam String customerNumber) {
         String kycData = kycService.getCustomerKyc(customerNumber);
         loanStatus.put(customerNumber, "Subscribed");
@@ -35,6 +37,7 @@ public class LoanManagementController {
     }
 
     @PostMapping("/loan-request")
+    @Operation(summary = "Request a loan", description = "Requests a loan for a subscribed customer")
     public String requestLoan(@RequestParam String customerNumber, @RequestParam double amount) {
         if (loanStatus.containsKey(customerNumber) && loanStatus.get(customerNumber).equals("Subscribed")) {
             boolean eligible = loanService.checkEligibility(customerNumber);
@@ -50,6 +53,7 @@ public class LoanManagementController {
     }
 
     @GetMapping("/loan-status")
+    @Operation(summary = "Get loan status", description = "Fetches the loan status of a customer")
     public String getLoanStatus(@RequestParam String customerNumber) {
         return loanStatus.getOrDefault(customerNumber, "No record found");
     }

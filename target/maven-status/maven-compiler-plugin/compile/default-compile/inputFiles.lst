@@ -4,3 +4,4 @@
 /workspaces/LoanManagementSystem/src/main/java/com/credable/lms/services/LoanService.java
 /workspaces/LoanManagementSystem/src/main/java/com/credable/lms/controllers/LoanManagementController.java
 /workspaces/LoanManagementSystem/src/main/java/com/credable/lms/services/KycService.java
+/workspaces/LoanManagementSystem/src/main/java/com/credable/lms/controllers/HomeController.java
